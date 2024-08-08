@@ -10,7 +10,7 @@ def __BCSP__():
            return(open('.proxi.txt','r').read().splitlines())
         else:
            try:
-               link = 'https://api.proxyscrape.com/v2/?request=displayproxies&protocol={}&timeout=100000&country=all&ssl=all&anonymity=all'
+               link = 'https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all'
                resp = requests.get(link.format('socks5'))
                for i in resp.text.splitlines():
                    if i.isdigit:
